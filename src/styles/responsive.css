@@ -263,6 +263,7 @@
 
   .hero-stage__controls {
     bottom: 0.2rem;
+    display: flex;
   }
 
   .hero-spec {
