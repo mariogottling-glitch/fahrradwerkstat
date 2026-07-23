@@ -45,6 +45,10 @@
     grid-template-columns: auto 1fr auto;
   }
 
+  .site-header .brand-logo img {
+    transform: none;
+  }
+
   .header-booking {
     justify-self: end;
   }

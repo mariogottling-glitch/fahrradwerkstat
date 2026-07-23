@@ -78,6 +78,11 @@
   filter: invert(1);
 }
 
+.site-header .brand-logo img {
+  transform: translateY(18px) scale(2.05);
+  transform-origin: center;
+}
+
 .brand-logo--light img {
   filter: none;
 }
