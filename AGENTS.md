@@ -17,3 +17,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 ## GitHub publishing
 
 - Keep `mariogottling-glitch/fahrradwerkstat` synchronized with this prototype: after each completed and verified change, commit and push the updated project source unless the user explicitly asks not to publish that change.
+
+## Deployment
+
+- The production site is deployed through Vercel from the GitHub repository. Preserve `vercel.json`, the `dist/client` output directory, and SPA fallback routing so both direct visits and client-side routes work after every deployment.
