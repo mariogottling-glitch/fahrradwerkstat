@@ -1,0 +1,9 @@
+node_modules/
+.pnpm-store/
+dist/
+.audit/
+.concept-source/
+.tools/
+vite.stdout.log
+vite.stderr.log
+*.local

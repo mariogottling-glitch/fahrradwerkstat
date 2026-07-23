@@ -1,0 +1,547 @@
+@media (max-width: 1180px) {
+  .quick-service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quick-service-grid a:nth-child(3) {
+    border-right: 0;
+  }
+
+  .quick-service-grid a:nth-child(-n + 3) {
+    border-bottom: var(--border);
+  }
+
+  .service-package-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-actions > a:nth-child(2) {
+    border-right: 0;
+  }
+
+  .contact-actions > a:nth-child(-n + 2) {
+    border-bottom: var(--border);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .header-booking {
+    justify-self: end;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-drawer {
+    display: block;
+  }
+
+  .home-hero__grid,
+  .page-hero__grid,
+  .competence-grid,
+  .repair-grid,
+  .booking-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero__grid {
+    min-height: auto;
+  }
+
+  .home-hero__copy {
+    max-width: 740px;
+  }
+
+  .home-hero__visual {
+    height: 620px;
+  }
+
+  .competence-image {
+    height: 620px;
+  }
+
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-section .section-heading,
+  .process-section .process-steps {
+    margin-left: 7rem;
+  }
+
+  .process-cassette {
+    left: -17rem;
+    opacity: 0.72;
+  }
+
+  .pickup-section {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .workshop-strip .container {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    padding-block: var(--space-16);
+  }
+
+  .page-hero__grid {
+    min-height: 0;
+  }
+
+  .page-hero__image {
+    height: 440px;
+  }
+
+  .faq-grid {
+    gap: var(--space-8);
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid .section-heading,
+  .booking-info {
+    position: static;
+  }
+
+  .booking-grid {
+    gap: var(--space-10);
+  }
+
+  .contact-grid {
+    max-width: 780px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 1.25rem;
+    --display: clamp(2.65rem, 13vw, 4.25rem);
+    --h1: clamp(2.5rem, 11vw, 3.75rem);
+    --h2: clamp(2.125rem, 9vw, 3.2rem);
+  }
+
+  body {
+    padding-bottom: calc(70px + env(safe-area-inset-bottom));
+  }
+
+  .section {
+    padding-block: var(--space-20);
+  }
+
+  .section--tight {
+    padding-block: var(--space-12);
+  }
+
+  .section--bottom {
+    padding-bottom: var(--space-24);
+  }
+
+  .header-inner {
+    gap: var(--space-3);
+  }
+
+  .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .header-booking {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+
+  .home-hero {
+    padding-block: var(--space-12) var(--space-16);
+  }
+
+  .home-hero__grid {
+    gap: var(--space-10);
+  }
+
+  .home-hero h1 {
+    margin-bottom: var(--space-5);
+  }
+
+  .hero-lead {
+    font-size: 1.08rem;
+  }
+
+  .hero-actions {
+    display: grid;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .home-hero__visual {
+    height: 430px;
+    min-height: 0;
+  }
+
+  .hero-stage {
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-stage__word {
+    bottom: -0.08em;
+    font-size: clamp(3.5rem, 18vw, 5.5rem);
+  }
+
+  .hero-stage__cassette {
+    top: -6rem;
+    left: -7rem;
+    width: 18rem;
+    opacity: 0.12;
+    animation: none;
+  }
+
+  .hero-stage__subject {
+    transition: opacity 500ms var(--ease);
+  }
+
+  .hero-stage__subject--drivetrain {
+    --hero-right: -36%;
+    --hero-bottom: -1rem;
+    --hero-width: 172%;
+  }
+
+  .hero-stage__subject--disc-brake {
+    --hero-right: -13%;
+    --hero-bottom: -0.3rem;
+    --hero-width: 151%;
+  }
+
+  .hero-stage__subject--wheel-truing {
+    --hero-right: -15%;
+    --hero-bottom: -2.2rem;
+    --hero-width: 154%;
+  }
+
+  .hero-stage__controls {
+    bottom: 0.2rem;
+  }
+
+  .hero-spec {
+    top: var(--space-4);
+    right: var(--space-4);
+    max-width: 145px;
+    font-size: 0.58rem;
+  }
+
+  .hero-spec strong {
+    font-size: 0.65rem;
+  }
+
+  .hero-stage__index {
+    bottom: var(--space-4);
+    left: var(--space-4);
+  }
+
+  .hero-image-card {
+    right: var(--space-3);
+    bottom: var(--space-3);
+    max-width: 185px;
+    padding: var(--space-3);
+  }
+
+  .quick-services__heading {
+    display: block;
+  }
+
+  .quick-services__heading .eyebrow {
+    margin-bottom: var(--space-2);
+  }
+
+  .quick-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-service-grid a {
+    min-height: 138px;
+    border-right: var(--border) !important;
+    border-bottom: var(--border);
+  }
+
+  .quick-service-grid a:nth-child(even) {
+    border-right: 0 !important;
+  }
+
+  .quick-service-grid a:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .competence-image,
+  .repair-image {
+    height: 520px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .process-section .section-heading,
+  .process-section .process-steps {
+    margin-left: 0;
+  }
+
+  .process-cassette {
+    top: -3rem;
+    right: -8rem;
+    bottom: auto;
+    left: auto;
+    width: 20rem;
+    opacity: 0.16;
+  }
+
+  .process-quality-seal {
+    right: 1rem;
+    width: 88px;
+  }
+
+  .process-steps li {
+    display: grid;
+    padding: var(--space-6) 0;
+    column-gap: var(--space-5);
+    grid-template-columns: 52px 1fr;
+  }
+
+  .process-step__icon {
+    margin: 0;
+    grid-row: 1 / span 2;
+  }
+
+  .process-steps h3,
+  .process-steps p {
+    grid-column: 2;
+  }
+
+  .pickup-section {
+    grid-template-columns: 1fr;
+  }
+
+  .pickup-image {
+    min-height: 360px;
+  }
+
+  .pickup-content {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .pickup-price {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .pickup-price__separator {
+    display: none;
+  }
+
+  .pickup-content .button {
+    width: 100%;
+  }
+
+  .workshop-strip__images {
+    height: 420px;
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .booking-cta {
+    padding: var(--space-10) var(--space-6) var(--space-24);
+    grid-template-columns: 1fr;
+  }
+
+  .booking-cta-actions {
+    align-items: stretch;
+  }
+
+  .booking-cta__precision {
+    bottom: 1rem;
+    left: 1rem;
+    width: 90px;
+  }
+
+  .booking-cta__cassette {
+    right: -7rem;
+    bottom: -8rem;
+    width: 230px;
+    opacity: 0.72;
+  }
+
+  .page-hero__image {
+    height: 360px;
+  }
+
+  .service-jump {
+    top: var(--header-height);
+  }
+
+  .service-jump__inner {
+    width: max-content;
+    padding-right: var(--gutter);
+    gap: var(--space-6);
+  }
+
+  .service-package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-package h3 {
+    min-height: auto;
+  }
+
+  .ebike-band__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-list summary {
+    min-height: 72px;
+    gap: var(--space-4);
+  }
+
+  .booking-embed,
+  .booking-embed iframe {
+    min-height: 700px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-actions > a {
+    min-height: 126px;
+    border-right: 0;
+    border-bottom: var(--border);
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .contact-actions > a:last-child {
+    border-bottom: 0;
+  }
+
+  .contact-actions a > span {
+    margin: 0;
+    grid-row: 1 / span 2;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    padding-block: var(--space-5);
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sticky-mobile-cta {
+    position: fixed;
+    z-index: 70;
+    right: var(--space-3);
+    bottom: max(var(--space-3), env(safe-area-inset-bottom));
+    left: var(--space-3);
+    display: grid;
+    min-height: 58px;
+    padding: 5px;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-radius: 16px;
+    background: rgb(23 26 24 / 0.96);
+    box-shadow: 0 14px 34px rgb(23 26 24 / 0.24);
+    grid-template-columns: 54px 1fr 54px;
+    backdrop-filter: blur(16px);
+  }
+
+  .sticky-mobile-cta a {
+    display: flex;
+    min-width: 0;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .sticky-mobile-cta__booking {
+    gap: var(--space-2);
+    background: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 750;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --gutter: 1rem;
+  }
+
+  .header-booking {
+    padding-inline: 0.8rem;
+    font-size: 0.82rem;
+  }
+
+  .home-hero__visual {
+    height: 450px;
+  }
+
+  .hero-image-card {
+    max-width: 205px;
+    padding: var(--space-3);
+  }
+
+  .quick-service-grid a {
+    min-height: 128px;
+    padding: var(--space-4);
+  }
+
+  .quick-service-grid span {
+    font-size: 0.86rem;
+  }
+
+  .competence-image,
+  .repair-image {
+    height: 440px;
+  }
+
+  .workshop-strip__images {
+    height: 360px;
+  }
+
+  .page-hero__image {
+    height: 310px;
+  }
+
+  .pickup-image {
+    min-height: 310px;
+  }
+}
