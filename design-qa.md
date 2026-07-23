@@ -1,56 +1,55 @@
-# Design QA — Brick Line Pattern
+# Design QA — Parts Catalogue Hero, Version 3
 
-**Comparison Target**
+## Comparison target
 
-- Source visual truth: `C:\Users\Mario\AppData\Local\Temp\codex-clipboard-055cd769-1dec-4587-ba2d-a8ec3ed132f8.png` for the natural masonry proportions and `C:\Users\Mario\AppData\Local\Temp\codex-clipboard-ffbe3c89-d536-45da-bfb3-e366b59ee5f6.png` for the requested charcoal-gray tone.
-- Browser-rendered implementation: `.audit/brick-lines-hero-v1.png`, `.audit/brick-lines-desktop-v2.png`, and `.audit/brick-lines-mobile-v2.png`.
-- Combined comparison: `.audit/brick-lines-comparison-final.png`.
-- State: homepage, light theme, menu closed.
-- CSS viewport: 1871 × 1216 px desktop and 390 × 844 px mobile at 1× density. Browser scrollbar reduces captured mobile content width to 375 px.
-- Source pixels: 454 × 655 px courtyard photo and 336 × 142 px gray-tone reference. Pattern asset: 960 × 224 SVG viewBox. Desktop implementation: 1871 × 1216 px; mobile implementation: 375 × 812 px.
-- Normalization: the masonry photo, gray swatch, and rendered homepage were fitted into one equal-height comparison board. The sources define shape and tone rather than a literal page mockup.
+- Source visual truth: `C:\Users\Mario\.codex\generated_images\019f8b65-cfd7-7fe2-b50e-0a99bad2b2da\call_F12vn1T5bcqllwa4GIalUp4I.png`
+- Final desktop implementation: `.audit/homepage-version3-desktop-rail-scene1.png`
+- Final mobile implementation: `.audit/homepage-version3-mobile-rail-final.png`
+- Source pixels: 1486 × 1059 px
+- Desktop capture: 1425 × 1013 px from a 1440 × 1024 browser viewport
+- Mobile capture: 375 × 812 px from a 390 × 844 browser viewport
+- State: homepage, light theme, repair scene 01, desktop navigation visible
 
-**Findings**
+## Full-view evidence
 
-- No actionable P0, P1, or P2 findings remain.
-- Typography: hierarchy, wrapping, font weights, and text contrast remain intact. The thin mortar lines pass behind copy without obscuring letterforms.
-- Spacing and layout: no page dimensions, grids, gaps, card radii, or section boundaries changed. White, gray, orange, and dark surfaces remain unpatterned.
-- Colors and tokens: the pattern uses the requested `#171a18` charcoal at 14% stroke opacity over the existing `#f7f4ee` beige canvas.
-- Asset fidelity: `public/assets/textures/courtyard-brick-lines.svg` contains only transparent, slightly irregular mortar paths. The rejected photographic WebP texture was removed completely; there is no fill, noise, brick color, lighting, or material photograph.
-- Copy and content: unchanged.
-- Responsiveness: desktop uses a 960 × 224 px repeat; mobile scales it to 720 × 168 px for more natural brick proportions. Horizontal overflow is zero at both checked widths.
-- Accessibility: text contrast and semantic behavior are unchanged. The decorative pattern is CSS background content and is absent from the accessibility tree.
+The reference and final desktop implementation were opened together in one comparison input at matching aspect ratio and interaction state. The final implementation preserves the reference hierarchy and visual language: large top-left workshop mark, editorial navigation, functional 01/02/03 scene rail, oversized headline, asymmetric repair cutout, edge-anchored cassette, technical callout, and a compact rounded service rail crossing the lower edge of the hero visual.
 
-**Open Questions**
+## Focused-region evidence
 
-- None.
+- Header: the real logo is enlarged substantially on desktop while remaining contained and readable on mobile.
+- Hero visual: all three repair scenes keep hands attached to the right edge of the framed stage; no detached or floating limbs appear.
+- Service rail: six verified service destinations remain available and are compacted into the catalogue-style floating rail without inventing new offerings.
+- Decorative layer: the rejected brick texture is fully removed. The remaining graphics are real bicycle-component assets and restrained technical rules.
 
-**Comparison History**
+## Findings
 
-1. Rejected direction: pale photographic brick texture.
-   - [P1, visual direction] The raster treatment was too washed out and did not match the requested line-only graphic language.
-   - Fix: removed the WebP asset and replaced it with a transparent irregular vector mortar pattern in the site charcoal tone.
-   - Post-fix evidence: `.audit/brick-lines-hero-v1.png`, `.audit/brick-lines-mobile-v2.png`, and `.audit/brick-lines-comparison-final.png`.
+- No P0, P1, or P2 issues remain.
+- Typography and hierarchy closely match the selected mock. Existing verified copy is preserved.
+- Desktop spacing is slightly more compact than the generated reference, which keeps the full conversion content inside the common laptop viewport without weakening the intended composition.
+- The floating rail uses six verified services rather than the four generic mock labels. This is an intentional content-fidelity adjustment.
+- Mobile falls back to the established stacked layout: the catalogue side rail and lower callout are removed, one compact scene control remains, and horizontal overflow is zero (`scrollWidth 375`, `clientWidth 375`).
+- Console warnings/errors: none.
 
-**Runtime Checks**
+## Interaction checks
 
-- Homepage desktop and mobile rendering checked in the in-app browser.
-- Beige canvas patterned; solid section surfaces remain clean.
-- Browser console warnings/errors: none.
+- Desktop 01/02/03 scene selector: passed; one visible selector at the breakpoint and `aria-pressed` updates correctly.
+- Mobile scene selector: passed; one visible selector at the breakpoint.
+- Automatic repair slideshow: retained.
+- Primary booking and service links: retained.
 - Production build: passed.
 - Sites worker/package tests: 4 passed, 0 failed.
+- Vercel production deployment: verified with the final CSS bundle.
 
-**Implementation Checklist**
+## Comparison history
 
-- [x] Remove the photographic background texture
-- [x] Draw only natural, slightly irregular brick joints
-- [x] Use the requested charcoal-gray tone
-- [x] Keep all non-beige surfaces clean
-- [x] Tune brick scale separately for desktop and mobile
-- [x] Validate overflow, console, build, and tests
+1. Initial implementation added the catalogue rail, edge component, and callout but retained a large below-hero service section.
+2. Desktop logo was enlarged after the first browser capture showed insufficient presence.
+3. Duplicate desktop scene controls were removed while retaining the compact control on mobile.
+4. The verified service list was converted into the floating rounded hero rail from the selected reference.
+5. Final desktop and mobile captures were rechecked after Vercel deployed the last bundle.
 
-**Follow-up Polish**
+## Remaining P3 polish
 
-- Optional P3: stroke opacity can be adjusted in one place inside the SVG if a slightly quieter or stronger presence is desired later.
+- None required for handoff. Further changes should be preference-led rather than corrective.
 
 final result: passed
