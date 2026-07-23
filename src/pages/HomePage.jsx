@@ -57,6 +57,20 @@ export function HomePage({ navigate }) {
     <main id="main">
       <section className="home-hero">
         <div className="container home-hero__grid">
+          <div className="hero-catalog-rail" aria-label="Reparaturszenen auswählen">
+            {heroSlides.map((slide, index) => (
+              <button
+                key={slide.id}
+                type="button"
+                className={index === activeHeroSlide ? "is-active" : ""}
+                aria-label={`Szene ${index + 1}: ${slide.title}`}
+                aria-pressed={index === activeHeroSlide}
+                onClick={() => setActiveHeroSlide(index)}
+              >
+                0{index + 1}
+              </button>
+            ))}
+          </div>
           <div className="home-hero__copy">
             <p className="eyebrow">Fahrrad-Meisterwerkstatt · Bornheim-Rösberg</p>
             <h1>Meisterservice für jedes Fahrrad<span>.</span></h1>
@@ -146,6 +160,16 @@ export function HomePage({ navigate }) {
               </div>
             </div>
           </div>
+        </div>
+        <img
+          className="hero-catalog-part"
+          src="/assets/graphics/cassette-cutout.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="hero-catalog-callout" aria-hidden="true">
+          <span>{activeSlide.detail}</span>
+          <strong>{activeSlide.title}</strong>
         </div>
       </section>
 

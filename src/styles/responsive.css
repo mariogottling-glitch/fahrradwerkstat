@@ -34,7 +34,7 @@
 
 @media (max-width: 980px) {
   :root {
-    --header-height: 72px;
+    --header-height: 82px;
   }
 
   .desktop-nav {
@@ -68,6 +68,22 @@
 
   .home-hero__grid {
     min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-catalog-rail {
+    display: none;
+  }
+
+  .hero-catalog-part {
+    bottom: -9rem;
+    left: -11rem;
+    width: 28rem;
+    opacity: 0.25;
+  }
+
+  .hero-catalog-callout {
+    display: none;
   }
 
   .home-hero__copy {
@@ -164,8 +180,8 @@
   }
 
   .brand-logo {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
   }
 
   .header-booking {
@@ -284,6 +300,8 @@
     min-height: 138px;
     border-right: var(--border) !important;
     border-bottom: var(--border);
+    gap: var(--space-3);
+    grid-template-columns: auto 1fr auto;
   }
 
   .quick-service-grid a:nth-child(even) {

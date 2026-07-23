@@ -16,9 +16,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: var(--color-bg);
-  background-image: url("/assets/textures/courtyard-brick-lines.svg");
-  background-position: center var(--header-height);
-  background-size: 960px 224px;
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -168,12 +165,6 @@ ol {
 
 ::selection {
   background: rgb(232 93 42 / 0.24);
-}
-
-@media (max-width: 760px) {
-  body {
-    background-size: 720px 168px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

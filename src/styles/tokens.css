@@ -55,7 +55,7 @@
   --container-wide: 1440px;
   --container-text: 760px;
   --gutter: clamp(1.25rem, 4vw, 4rem);
-  --header-height: 78px;
+  --header-height: 96px;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --duration-fast: 140ms;
   --duration: 220ms;
