@@ -90,6 +90,49 @@
     display: none;
   }
 
+  .quick-services {
+    width: auto;
+    margin: 0;
+    padding-block: var(--space-16);
+    border-block: var(--border);
+    background: var(--color-surface);
+  }
+
+  .quick-services .container {
+    width: min(100% - (2 * var(--gutter)), var(--container));
+  }
+
+  .quick-services__heading {
+    display: flex;
+  }
+
+  .quick-service-grid {
+    border-radius: var(--radius-lg);
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .quick-service-grid a {
+    min-height: 118px;
+    padding: var(--space-4);
+    gap: var(--space-3);
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .quick-service-grid a svg:last-child {
+    display: block;
+  }
+
+  .quick-service-grid .quick-service__label {
+    gap: var(--space-1);
+    font-size: 0.86rem;
+  }
+
+  .quick-service__label small {
+    font-size: 0.72rem;
+  }
+
   .home-hero__copy {
     max-width: 740px;
   }
