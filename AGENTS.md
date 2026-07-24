@@ -14,6 +14,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Preserve its warm off-white canvas, charcoal typography, burnt-orange actions, asymmetric image-led hero, fine technical rules, generous whitespace, compact service selector, and restrained rounded surfaces.
 - Replace any mock-generated facts with the verified content from diefahrradmeisterei.de. The coded site must never invent reviews, staff, awards, partners, prices, contact details, guarantees, statistics, or opening hours.
 - Do not use a brick-wall or brick-line background texture. The approved finishing direction is a restrained parts-catalogue language: a functional 01/02/03 scene rail, edge-anchored bicycle components, sparse technical callouts, and a clearly larger header logo.
+- Keep the hero layers visually separated at desktop and laptop widths: the headline must not intrude into the image frame, and the service selector must sit below the image content without covering the scene index or workshop badge.
 
 ## GitHub publishing
 
