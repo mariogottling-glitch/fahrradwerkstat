@@ -9,7 +9,7 @@
   min-height: 700px;
   align-items: center;
   gap: clamp(2rem, 3.5vw, 3.75rem);
-  grid-template-columns: 54px minmax(0, 0.92fr) minmax(0, 1.08fr);
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
 }
 
 .home-hero__copy {
@@ -17,70 +17,75 @@
   z-index: 2;
 }
 
-.hero-catalog-rail {
-  z-index: 3;
+.section-rail {
+  position: fixed;
+  z-index: 30;
+  top: 50%;
+  left: 0;
   display: grid;
-  height: min(575px, 54vw);
-  max-height: 575px;
-  min-height: 470px;
-  align-self: center;
-  border-left: 1px solid rgb(30 33 31 / 0.2);
-  grid-template-rows: repeat(3, 1fr);
+  width: 46px;
+  height: min(68vh, 610px);
+  transform: translateY(-44%);
+  grid-template-rows: repeat(7, 1fr);
 }
 
-.hero-catalog-rail button {
+.section-rail::before {
+  position: absolute;
+  top: calc(100% / 14);
+  bottom: calc(100% / 14);
+  left: 20px;
+  width: 1px;
+  background: rgb(126 129 124 / 0.42);
+  content: "";
+}
+
+.section-rail a {
   position: relative;
-  width: 54px;
-  padding: 0 0 0 0.95rem;
-  border: 0;
-  border-bottom: 1px solid rgb(30 33 31 / 0.14);
-  background: transparent;
-  color: rgb(30 33 31 / 0.5);
-  font-size: 0.84rem;
+  display: flex;
+  align-items: center;
+  padding-left: 1.8rem;
+  color: rgb(126 129 124 / 0.78);
+  font-size: 0.7rem;
   font-weight: 650;
-  text-align: left;
-  cursor: pointer;
+  text-decoration: none;
   transition: color var(--duration) var(--ease);
 }
 
-.hero-catalog-rail button:last-child {
-  border-bottom: 0;
-}
-
-.hero-catalog-rail button::before {
+.section-rail a::before {
   position: absolute;
   top: 50%;
-  right: 100%;
+  right: 26px;
   width: 0;
   height: 1px;
   background: var(--color-accent);
   content: "";
-  transition: width var(--duration) var(--ease);
+  transition: width 320ms var(--ease);
 }
 
-.hero-catalog-rail button::after {
+.section-rail a::after {
   position: absolute;
-  top: calc(50% - 5px);
-  left: -5px;
-  width: 10px;
-  height: 10px;
+  top: calc(50% - 4px);
+  left: 16px;
+  width: 9px;
+  height: 9px;
   transform: scale(0);
   border-radius: 50%;
   background: var(--color-accent);
   content: "";
-  transition: transform var(--duration) var(--ease);
+  transition: transform 320ms var(--ease);
 }
 
-.hero-catalog-rail button:hover,
-.hero-catalog-rail button.is-active {
+.section-rail a:hover,
+.section-rail a:focus-visible,
+.section-rail a.is-active {
   color: var(--color-accent);
 }
 
-.hero-catalog-rail button.is-active::before {
-  width: 2rem;
+.section-rail a.is-active::before {
+  width: 1.25rem;
 }
 
-.hero-catalog-rail button.is-active::after {
+.section-rail a.is-active::after {
   transform: scale(1);
 }
 

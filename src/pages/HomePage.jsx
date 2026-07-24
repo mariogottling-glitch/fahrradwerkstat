@@ -36,9 +36,20 @@ const heroSlides = [
   },
 ];
 
+const sectionNavItems = [
+  { id: "start", label: "Start" },
+  { id: "services", label: "Services" },
+  { id: "werkstatt", label: "Werkstatt" },
+  { id: "ablauf", label: "Ablauf" },
+  { id: "abholservice", label: "Abholservice" },
+  { id: "einblicke", label: "Einblicke" },
+  { id: "abschluss", label: "Termin" },
+];
+
 export function HomePage({ navigate }) {
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [heroPaused, setHeroPaused] = useState(false);
+  const [activeSection, setActiveSection] = useState(0);
 
   useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -51,26 +62,64 @@ export function HomePage({ navigate }) {
     return () => window.clearInterval(timer);
   }, [heroPaused]);
 
+  useEffect(() => {
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      frame = 0;
+      const guideLine = window.innerHeight * 0.38;
+      let nextSection = 0;
+
+      sectionNavItems.forEach((item, index) => {
+        const section = document.getElementById(item.id);
+        if (section && section.getBoundingClientRect().top <= guideLine) {
+          nextSection = index;
+        }
+      });
+
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        nextSection = sectionNavItems.length - 1;
+      }
+
+      setActiveSection(nextSection);
+    };
+
+    const requestUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   const activeSlide = heroSlides[activeHeroSlide];
 
   return (
     <main id="main">
-      <section className="home-hero">
+      <nav className="section-rail" aria-label="Bereiche dieser Seite">
+        {sectionNavItems.map((item, index) => (
+          <a
+            key={item.id}
+            className={index === activeSection ? "is-active" : ""}
+            href={`#${item.id}`}
+            aria-label={`${String(index + 1).padStart(2, "0")} ${item.label}`}
+            aria-current={index === activeSection ? "location" : undefined}
+            title={item.label}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </a>
+        ))}
+      </nav>
+
+      <section id="start" className="home-hero">
         <div className="container home-hero__grid">
-          <div className="hero-catalog-rail" aria-label="Reparaturszenen auswählen">
-            {heroSlides.map((slide, index) => (
-              <button
-                key={slide.id}
-                type="button"
-                className={index === activeHeroSlide ? "is-active" : ""}
-                aria-label={`Szene ${index + 1}: ${slide.title}`}
-                aria-pressed={index === activeHeroSlide}
-                onClick={() => setActiveHeroSlide(index)}
-              >
-                0{index + 1}
-              </button>
-            ))}
-          </div>
           <div className="home-hero__copy">
             <p className="eyebrow">Fahrrad-Meisterwerkstatt · Bornheim-Rösberg</p>
             <h1>Meisterservice für jedes Fahrrad<span>.</span></h1>
@@ -163,7 +212,7 @@ export function HomePage({ navigate }) {
         </div>
       </section>
 
-      <section className="quick-services section section--tight">
+      <section id="services" className="quick-services section section--tight">
         <div className="container">
           <div className="quick-services__heading">
             <p className="eyebrow">Direkt zum passenden Service</p>
@@ -193,7 +242,7 @@ export function HomePage({ navigate }) {
         </div>
       </section>
 
-      <section className="section competence-section">
+      <section id="werkstatt" className="section competence-section">
         <div className="container competence-grid">
           <div className="competence-image">
             <img
@@ -264,7 +313,7 @@ export function HomePage({ navigate }) {
         <PickupSection navigate={navigate} />
       </div>
 
-      <section className="section workshop-strip">
+      <section id="einblicke" className="section workshop-strip">
         <div className="container">
           <div className="workshop-strip__images">
             <img
