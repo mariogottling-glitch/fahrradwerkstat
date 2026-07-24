@@ -79,17 +79,6 @@
     display: none;
   }
 
-  .hero-catalog-part {
-    bottom: -9rem;
-    left: -11rem;
-    width: 28rem;
-    opacity: 0.25;
-  }
-
-  .hero-catalog-callout {
-    display: none;
-  }
-
   .quick-services {
     width: auto;
     margin: 0;

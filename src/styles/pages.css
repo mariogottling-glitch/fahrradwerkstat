@@ -84,51 +84,6 @@
   transform: scale(1);
 }
 
-.hero-catalog-part {
-  position: absolute;
-  z-index: 0;
-  bottom: -12rem;
-  left: -10rem;
-  width: clamp(20rem, 28vw, 34rem);
-  max-width: none;
-  opacity: 0.72;
-  filter: grayscale(1) contrast(0.9);
-  transform: rotate(-11deg);
-  pointer-events: none;
-}
-
-.hero-catalog-callout {
-  position: absolute;
-  z-index: 2;
-  bottom: 3.5rem;
-  left: max(12rem, calc((100vw - var(--container)) / 2 + 9rem));
-  display: grid;
-  min-width: 220px;
-  padding: 0 0 0.15rem 1rem;
-  border-left: 2px solid var(--color-accent);
-  color: var(--color-ink-soft);
-  font-size: 0.64rem;
-  letter-spacing: 0.11em;
-  line-height: 1.45;
-  text-transform: uppercase;
-}
-
-.hero-catalog-callout::before {
-  position: absolute;
-  right: 100%;
-  bottom: -1px;
-  width: clamp(4rem, 8vw, 8rem);
-  height: 1px;
-  background: var(--color-accent);
-  content: "";
-}
-
-.hero-catalog-callout strong {
-  color: var(--color-ink);
-  font-size: 0.72rem;
-  letter-spacing: 0.07em;
-}
-
 .home-hero h1 {
   max-width: 650px;
   margin-bottom: var(--space-6);

@@ -161,16 +161,6 @@ export function HomePage({ navigate }) {
             </div>
           </div>
         </div>
-        <img
-          className="hero-catalog-part"
-          src="/assets/graphics/cassette-cutout.png"
-          alt=""
-          aria-hidden="true"
-        />
-        <div className="hero-catalog-callout" aria-hidden="true">
-          <span>{activeSlide.detail}</span>
-          <strong>{activeSlide.title}</strong>
-        </div>
       </section>
 
       <section className="quick-services section section--tight">
